@@ -60,14 +60,14 @@ class TodoManager {
     }
     
     func saveTodo() {
-        Storage.store(todos, to: .documents, as: "todos.json")
+//        Storage.store(todos, to: .documents, as: "todos.json")
     }
     
     func retrieveTodo() {
-        todos = Storage.retrieve("todos.json", from: .documents, as: [Todo].self) ?? []
+//        todos = Storage.retrieve("todos.json", from: .documents, as: [Todo].self) ?? []
         
-        let lastId = todos.last?.id ?? 0
-        TodoManager.lastId = lastId
+//        let lastId = todos.last?.id ?? 0
+//        TodoManager.lastId = lastId
     }
 }
 
@@ -83,5 +83,39 @@ class TodoViewModel {
             default: return "Upcoming"
             }
         }
+    }
+    
+    private let manager = TodoManager.shared
+    
+    var todos: [Todo] {
+        return manager.todos
+    }
+    
+    var todayTodos: [Todo] {
+        return todos.filter { $0.isToday == true }
+    }
+    
+    var upcomingTodos: [Todo] {
+        return todos.filter { $0.isToday == false }
+    }
+    
+    var numOfSection: Int {
+        return Section.allCases.count
+    }
+    
+    func addTodo(_ todo: Todo) {
+        manager.addTodo(todo)
+    }
+    
+    func deleteTodo(_ todo: Todo) {
+        manager.deleteTodo(todo)
+    }
+    
+    func updateTodo(_ todo: Todo) {
+        manager.updateTodo(todo)
+    }
+    
+    func loadTasks() {
+        manager.retrieveTodo()
     }
 }
