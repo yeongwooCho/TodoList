@@ -15,11 +15,14 @@ struct Todo: Codable, Equatable {
     
     mutating func update(isDone: Bool, detail: String, isToday: Bool) {
         // TODO: 업데이트 로직 추가
+        self.isDone = isDone
+        self.detail = detail
+        self.isToday = isToday
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         // TODO: 동등 조건 추가
-        return true
+        return lhs.id == rhs.id
     }
 }
 
@@ -32,22 +35,40 @@ class TodoManager {
     
     func createTodo(detail: String, isToday: Bool) -> Todo {
         // TODO: create로직 추가
-        return Todo(id: 1, isDone: false, detail: "2", isToday: true)
+        let nextId = TodoManager.lastId + 1
+        TodoManager.lastId = nextId
+        return Todo(id: nextId, isDone: false, detail: detail, isToday: isToday)
     }
     
     func addTodo(_ todo: Todo) {
         // Todo: add 로직 추가
+        todos.append(todo)
+        saveTodo()
     }
     
     func deleteTodo(_ todo: Todo) {
         // Todo: delete 로직 추가
+        todos = todos.filter{ $0.id != todo.id }
+        saveTodo()
     }
     
     func updateTodo(_ todo: Todo) {
         // Todo: update 로직 추가
+        guard let index = todos.firstIndex(of: todo) else { return }
+        todos[index].update(isDone: todo.isDone, detail: todo.detail, isToday: todo.isToday)
+        saveTodo()
     }
     
-    func saveTodo() {}
+    func saveTodo() {
+        Storage.store(todos, to: .documents, as: "todos.json")
+    }
+    
+    func retrieveTodo() {
+        todos = Storage.retrieve("todos.json", from: .documents, as: [Todo].self) ?? []
+        
+        let lastId = todos.last?.id ?? 0
+        TodoManager.lastId = lastId
+    }
 }
 
 class TodoViewModel {

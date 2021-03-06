@@ -132,14 +132,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMI-4m-hPc">
+                                                    <rect key="frame" x="58.5" y="34.5" width="250" height="1"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="rsu-aa-Ndh"/>
+                                                        <constraint firstAttribute="height" constant="1" id="xQC-dk-y5t"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qpl-f6-tEm" firstAttribute="leading" secondItem="F0S-Vu-icd" secondAttribute="trailing" constant="20" id="1Mh-1P-k4y"/>
                                                 <constraint firstItem="qpl-f6-tEm" firstAttribute="centerY" secondItem="QhK-ht-52f" secondAttribute="centerY" id="2WH-PK-izc"/>
                                                 <constraint firstAttribute="trailing" secondItem="3wr-2b-HvR" secondAttribute="trailing" constant="20" id="4VX-2x-9b9"/>
+                                                <constraint firstItem="uMI-4m-hPc" firstAttribute="centerY" secondItem="QhK-ht-52f" secondAttribute="centerY" id="7uc-QE-Bxo"/>
                                                 <constraint firstItem="F0S-Vu-icd" firstAttribute="centerY" secondItem="QhK-ht-52f" secondAttribute="centerY" id="L1n-S1-9xd"/>
                                                 <constraint firstItem="3wr-2b-HvR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qpl-f6-tEm" secondAttribute="trailing" constant="20" id="OiL-Hl-xzA"/>
                                                 <constraint firstItem="F0S-Vu-icd" firstAttribute="leading" secondItem="QhK-ht-52f" secondAttribute="leading" constant="20" id="SW0-L2-pWL"/>
+                                                <constraint firstItem="uMI-4m-hPc" firstAttribute="leading" secondItem="F0S-Vu-icd" secondAttribute="trailing" constant="10" id="dzA-aO-qyz"/>
                                                 <constraint firstItem="3wr-2b-HvR" firstAttribute="centerY" secondItem="QhK-ht-52f" secondAttribute="centerY" id="inh-3j-abu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -148,6 +158,8 @@
                                             <outlet property="checkButton" destination="F0S-Vu-icd" id="502-CY-Xsa"/>
                                             <outlet property="deleteButton" destination="3wr-2b-HvR" id="fxc-aY-84W"/>
                                             <outlet property="descriptionLabel" destination="qpl-f6-tEm" id="XlI-l1-UhZ"/>
+                                            <outlet property="strikeThroughView" destination="uMI-4m-hPc" id="xSS-xI-Wxb"/>
+                                            <outlet property="strikeThroughWidth" destination="rsu-aa-Ndh" id="czm-J4-gMx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
