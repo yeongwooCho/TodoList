@@ -17,8 +17,8 @@ class TodoListViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     
-    // TODO: TodoViewModel 만들기
-    
+    // [x] TODO: TodoViewModel 만들기
+    let todoListViewModel = TodoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,9 @@ class TodoListViewController: UIViewController {
         
         // TODO: 키보드 디텍션
         
-        // TODO: 데이터 불러오기
+        
+        // [x] TODO: 데이터 불러오기
+        todoListViewModel.loadTasks()
     }
 
     @IBAction func isTodayButtonTapped(_sender: Any) {
@@ -43,33 +45,45 @@ class TodoListViewController: UIViewController {
 }
 
 extension TodoListViewController {
-    @objc private func adjustInputView(noti: Notification) {
-        guard let userInfo = noti.userInfo else { return }
-        // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
-    }
+//    @objc private func adjustInputView(noti: Notification) {
+//        guard let userInfo = noti.userInfo else { return }
+//        // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+//    }
 }
 
 extension TodoListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // TODO: 섹션 몇개?
-        return 2
+        // [x] TODO: 섹션 몇개?
+        return todoListViewModel.numOfSection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: 섹션별 아이템 몇개?
-        return 10
+        // [x] TODO: 섹션별 아이템 몇개?
+        if section == 0 {
+            return todoListViewModel.todayTodos.count
+        } else {
+            return todoListViewModel.upcomingTodos.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: custom cell
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoListCell", for: indexPath) as? TodoListCell else {
             return UICollectionViewCell()
         }
-        return cell
         
-        // TODO: todo를 이용해서 updateUI
+        var todo: Todo
+        if indexPath.section == 0 {
+            todo = todoListViewModel.todayTodos[indexPath.item]
+        } else {
+            todo = todoListViewModel.upcomingTodos[indexPath.item]
+        }
+        cell.updateUI(todo: todo)
+        // [x] TODO: custom cell
+        // [x] TODO: todo를 이용해서 updateUI
         // TODO: doneButtonHandler 작성
         // TODO: deleteButtonHandler 작성
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
