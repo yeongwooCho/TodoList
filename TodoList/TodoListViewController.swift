@@ -137,7 +137,12 @@ class TodoListCell: UICollectionViewCell {
     }
     
     func updateUI(todo: Todo) {
-        // TODO: cell update
+        // [x] TODO: cell update
+        checkButton.isSelected = todo.isDone
+        descriptionLabel.text = todo.detail
+        descriptionLabel.alpha = todo.isDone ? 0.2 : 1
+        deleteButton.isHidden = todo.isDone == false
+        showStrikeThrough(todo.isDone)
     }
     
     private func showStrikeThrough(_ show: Bool) {
@@ -149,15 +154,24 @@ class TodoListCell: UICollectionViewCell {
     }
     
     func reset() {
-        // TODO: reset logic 구현
+        // [x] TODO: reset logic 구현
+        descriptionLabel.alpha = 1
+        deleteButton.isHidden = true
+        showStrikeThrough(false)
     }
     
     @IBAction func checkButtonTapped(_sender: Any) {
-        // TODO: checkButton 처리
+        // [x] TODO: checkButton 처리
+        checkButton.isSelected = !checkButton.isSelected
+        let isDone = checkButton.isSelected
+        descriptionLabel.alpha = isDone ? 0.2 : 1
+        deleteButton.isHidden = !isDone
+        
+        doneButtonTapHandler?(isDone)
     }
     
     @IBAction func deleteButtonTapped(_sender: Any) {
-        // TODO: deleteButton 처리
+        // [x] TODO: deleteButton 처리
         deleteButtonTapHandler?()
     }
 }

@@ -110,14 +110,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-Vu-icd">
-                                                    <rect key="frame" x="20" y="21.5" width="28.5" height="27"/>
+                                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-Vu-icd">
+                                                    <rect key="frame" x="20" y="21" width="29" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="tintColor" systemColor="systemPinkColor"/>
                                                     <state key="normal">
                                                         <imageReference key="image" image="circlebadge" catalog="system" symbolScale="large"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                                     </state>
+                                                    <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="checkButtonTappedWith_sender:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="Mtt-Cn-Smb"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-2b-HvR">
                                                     <rect key="frame" x="365" y="21" width="29" height="28"/>
@@ -125,15 +129,18 @@
                                                     <state key="normal" image="xmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonTappedWith_sender:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="27n-tQ-fst"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly IOS Meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpl-f6-tEm">
-                                                    <rect key="frame" x="68.5" y="22" width="185" height="26"/>
+                                                    <rect key="frame" x="69" y="22" width="185" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMI-4m-hPc">
-                                                    <rect key="frame" x="58.5" y="34.5" width="250" height="1"/>
+                                                    <rect key="frame" x="59" y="34.5" width="250" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="rsu-aa-Ndh"/>
