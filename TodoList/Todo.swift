@@ -33,22 +33,33 @@ class TodoManager {
     
     var todos: [Todo] = []
     
+    func lastIdUpdate(num: Int) {
+        if num == 1 {
+            TodoManager.lastId += num
+        } else if num == -1 {
+            if TodoManager.lastId + num >= 0 {
+                TodoManager.lastId += num
+            } else { return }
+        } else { return }
+    }
+    
     func createTodo(detail: String, isToday: Bool) -> Todo {
         // TODO: create로직 추가
-        let nextId = TodoManager.lastId + 1
-        TodoManager.lastId = nextId
-        return Todo(id: nextId, isDone: false, detail: detail, isToday: isToday)
+        lastIdUpdate(num: 1)
+        return Todo(id: TodoManager.lastId, isDone: false, detail: detail, isToday: isToday)
     }
     
     func addTodo(_ todo: Todo) {
         // Todo: add 로직 추가
         todos.append(todo)
+        lastIdUpdate(num: 1)
         saveTodo()
     }
     
     func deleteTodo(_ todo: Todo) {
         // Todo: delete 로직 추가
         todos = todos.filter{ $0.id != todo.id }
+        lastIdUpdate(num: -1)
         saveTodo()
     }
     
