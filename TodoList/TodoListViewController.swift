@@ -166,6 +166,7 @@ class TodoListCell: UICollectionViewCell {
         let isDone = checkButton.isSelected
         descriptionLabel.alpha = isDone ? 0.2 : 1
         deleteButton.isHidden = !isDone
+        showStrikeThrough(isDone)
         
         doneButtonTapHandler?(isDone)
     }
