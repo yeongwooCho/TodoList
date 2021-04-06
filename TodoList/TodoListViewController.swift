@@ -25,14 +25,16 @@ class TodoListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // TODO: 키보드 디텍션
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // [x] TODO: 데이터 불러오기
         todoListViewModel.loadTasks()
     }
 
     @IBAction func isTodayButtonTapped(_sender: Any) {
-        // TODO: 투데이 버튼 토글 작업
+        // [x] TODO: 투데이 버튼 토글 작업
+        isTodayButton.isSelected = !isTodayButton.isSelected
     }
     
     @IBAction func addTaskButtonTapped(_sender: Any) {
@@ -45,10 +47,10 @@ class TodoListViewController: UIViewController {
 }
 
 extension TodoListViewController {
-//    @objc private func adjustInputView(noti: Notification) {
-//        guard let userInfo = noti.userInfo else { return }
-//        // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
-//    }
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else { return }
+        // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+    }
 }
 
 extension TodoListViewController: UICollectionViewDataSource {
