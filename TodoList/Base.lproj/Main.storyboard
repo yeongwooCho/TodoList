@@ -103,7 +103,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier=" TodoListCell" id="xE5-Ai-GdE" userLabel="TodoListCell" customClass="TodoListCell" customModule="TodoList" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoListCell" id="xE5-Ai-GdE" userLabel="TodoListCell" customClass="TodoListCell" customModule="TodoList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QhK-ht-52f">
@@ -120,7 +120,7 @@
                                                     </state>
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system"/>
                                                     <connections>
-                                                        <action selector="checkButtonTapped:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="mPr-bl-iN3"/>
+                                                        <action selector="checkButtonTapped:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="p9V-Yy-CT7"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-2b-HvR">
@@ -130,7 +130,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="deleteButtonTapped:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="7Hk-dq-o1I"/>
+                                                        <action selector="deleteButtonTapped:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="z4Z-FB-Xd3"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly IOS Meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpl-f6-tEm">
@@ -162,11 +162,11 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="70"/>
                                         <connections>
-                                            <outlet property="checkButton" destination="F0S-Vu-icd" id="502-CY-Xsa"/>
-                                            <outlet property="deleteButton" destination="3wr-2b-HvR" id="fxc-aY-84W"/>
-                                            <outlet property="descriptionLabel" destination="qpl-f6-tEm" id="XlI-l1-UhZ"/>
-                                            <outlet property="strikeThroughView" destination="uMI-4m-hPc" id="xSS-xI-Wxb"/>
-                                            <outlet property="strikeThroughWidth" destination="rsu-aa-Ndh" id="czm-J4-gMx"/>
+                                            <outlet property="checkButton" destination="F0S-Vu-icd" id="y3x-6m-G0r"/>
+                                            <outlet property="deleteButton" destination="3wr-2b-HvR" id="6aS-vZ-um6"/>
+                                            <outlet property="descriptionLabel" destination="qpl-f6-tEm" id="G94-68-ZwY"/>
+                                            <outlet property="strikeThroughView" destination="uMI-4m-hPc" id="6UH-yA-Feg"/>
+                                            <outlet property="strikeThroughWidth" destination="rsu-aa-Ndh" id="QoI-rU-L0t"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -190,8 +190,8 @@
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jKl-V1-e6w"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3Sp-YF-eTO"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NoJ-D3-au5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Yod-Hj-VwL"/>
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-vy-ZCm">
@@ -216,7 +216,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="isTodayButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9jz-P4-aMM"/>
+                                            <action selector="isTodayButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTz-li-6rd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-3g-KtW">
@@ -231,7 +231,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" weight="bold"/>
                                         </state>
                                         <connections>
-                                            <action selector="addTaskButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LB0-XA-z8E"/>
+                                            <action selector="addTaskButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00B-ef-RUh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -247,9 +247,6 @@
                                     <constraint firstItem="0Oj-3r-rfY" firstAttribute="leading" secondItem="Dcy-vy-ZCm" secondAttribute="leading" constant="16" id="tZG-g1-d9J"/>
                                     <constraint firstAttribute="trailing" secondItem="iGM-3g-KtW" secondAttribute="trailing" constant="16" id="u6v-cf-Tdx"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="e2L-Vq-uFk" appends="YES" id="2Ji-aF-49l"/>
-                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -266,7 +263,7 @@
                             <constraint firstItem="4SV-qp-NAk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sLS-zl-eK6"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="e2L-Vq-uFk" appends="YES" id="cur-ib-G9g"/>
+                            <outletCollection property="gestureRecognizers" destination="mZK-9O-lMN" appends="YES" id="rPs-hC-Q9y"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="checkmark.circle.fill" catalog="system" id="PKE-H3-Vuq"/>
@@ -279,9 +276,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="e2L-Vq-uFk">
+                <tapGestureRecognizer id="mZK-9O-lMN">
                     <connections>
-                        <action selector="tapBG:" destination="BYZ-38-t0r" id="AB0-5h-Q1a"/>
+                        <action selector="tapBG:" destination="BYZ-38-t0r" id="1Jm-C2-Frp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

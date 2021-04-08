@@ -31,10 +31,6 @@ class TodoListViewController: UIViewController {
         // [x] TODO: 데이터 불러오기
         todoListViewModel.loadTasks()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
 
     @IBAction func isTodayButtonTapped(_ sender: Any) {
         // [x] TODO: 투데이 버튼 토글 작업
@@ -65,7 +61,6 @@ extension TodoListViewController {
         // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경
         guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
-        print(noti.name)
         if noti.name == UIResponder.keyboardWillShowNotification {
             let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
             inputViewBottom.constant = adjustmentHeight
