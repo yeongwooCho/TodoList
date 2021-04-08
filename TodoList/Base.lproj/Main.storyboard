@@ -254,6 +254,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dcy-vy-ZCm" secondAttribute="trailing" id="ACZ-yW-euJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dcy-vy-ZCm" secondAttribute="bottom" id="N3h-x2-UtN"/>
@@ -264,6 +265,9 @@
                             <constraint firstItem="4SV-qp-NAk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jK7-xv-Qzx"/>
                             <constraint firstItem="4SV-qp-NAk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sLS-zl-eK6"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="e2L-Vq-uFk" appends="YES" id="cur-ib-G9g"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="checkmark.circle.fill" catalog="system" id="PKE-H3-Vuq"/>
                     <connections>
@@ -277,7 +281,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="e2L-Vq-uFk">
                     <connections>
-                        <action selector="tapBG:" destination="BYZ-38-t0r" id="HKu-wu-B0l"/>
+                        <action selector="tapBG:" destination="BYZ-38-t0r" id="AB0-5h-Q1a"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
