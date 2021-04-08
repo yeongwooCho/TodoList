@@ -10,7 +10,7 @@ import UIKit
 class TodoListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var inputViewButton: NSLayoutConstraint!
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     @IBOutlet weak var inputTextField: UITextField!
     
     @IBOutlet weak var isTodayButton: UIButton!
@@ -24,20 +24,24 @@ class TodoListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // TODO: 키보드 디텍션
+        // [x] TODO: 키보드 디텍션
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // [x] TODO: 데이터 불러오기
         todoListViewModel.loadTasks()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
-    @IBAction func isTodayButtonTapped(_sender: Any) {
+    @IBAction func isTodayButtonTapped(_ sender: Any) {
         // [x] TODO: 투데이 버튼 토글 작업
         isTodayButton.isSelected = !isTodayButton.isSelected
     }
     
-    @IBAction func addTaskButtonTapped(_sender: Any) {
+    @IBAction func addTaskButtonTapped(_ sender: Any) {
         // TODO: Task 추가
         // add task to view model
         // and tableview reload or update
@@ -162,7 +166,7 @@ class TodoListCell: UICollectionViewCell {
         showStrikeThrough(false)
     }
     
-    @IBAction func checkButtonTapped(_sender: Any) {
+    @IBAction func checkButtonTapped(_ sender: Any) {
         // [x] TODO: checkButton 처리
         checkButton.isSelected = !checkButton.isSelected
         let isDone = checkButton.isSelected
@@ -173,7 +177,7 @@ class TodoListCell: UICollectionViewCell {
         doneButtonTapHandler?(isDone)
     }
     
-    @IBAction func deleteButtonTapped(_sender: Any) {
+    @IBAction func deleteButtonTapped(_ sender: Any) {
         // [x] TODO: deleteButton 처리
         deleteButtonTapHandler?()
     }
@@ -183,7 +187,7 @@ class TodoListCell: UICollectionViewCell {
 class TodoListHeaderView: UICollectionReusableView {
     @IBOutlet weak var sectionTitleLabel: UILabel!
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
     }
 }

@@ -120,7 +120,7 @@
                                                     </state>
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system"/>
                                                     <connections>
-                                                        <action selector="checkButtonTappedWith_sender:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="Mtt-Cn-Smb"/>
+                                                        <action selector="checkButtonTapped:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="mPr-bl-iN3"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-2b-HvR">
@@ -130,7 +130,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="deleteButtonTappedWith_sender:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="27n-tQ-fst"/>
+                                                        <action selector="deleteButtonTapped:" destination="xE5-Ai-GdE" eventType="touchUpInside" id="7Hk-dq-o1I"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly IOS Meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpl-f6-tEm">
@@ -190,37 +190,23 @@
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Gum-rF-P0y"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jGL-wp-t1b"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jKl-V1-e6w"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3Sp-YF-eTO"/>
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-vy-ZCm">
                                 <rect key="frame" x="0.0" y="753" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="I want to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Oj-3r-rfY">
-                                        <rect key="frame" x="10" y="13" width="297" height="34"/>
+                                        <rect key="frame" x="16" y="13" width="282" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-3g-KtW">
-                                        <rect key="frame" x="372" y="17.5" width="26" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="26" id="BcP-DI-GI3"/>
-                                            <constraint firstAttribute="height" constant="25" id="cxd-iU-zKM"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="plus" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addTaskButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEr-6Q-wU1"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJe-0F-46q">
-                                        <rect key="frame" x="317" y="12.5" width="45" height="35"/>
+                                        <rect key="frame" x="308" y="12.5" width="45" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="cfS-Io-hjY"/>
                                             <constraint firstAttribute="height" constant="35" id="o3H-YH-aWg"/>
+                                            <constraint firstAttribute="width" constant="45" id="u5L-hI-d5R"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Today">
@@ -230,11 +216,27 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="isTodayButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Nc-bw-aUw"/>
+                                            <action selector="isTodayButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9jz-P4-aMM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-3g-KtW">
+                                        <rect key="frame" x="363" y="12.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="BcP-DI-GI3"/>
+                                            <constraint firstAttribute="height" constant="35" id="cxd-iU-zKM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="plus" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addTaskButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LB0-XA-z8E"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="cJe-0F-46q" firstAttribute="centerY" secondItem="Dcy-vy-ZCm" secondAttribute="centerY" id="0QC-34-e8N"/>
                                     <constraint firstItem="iGM-3g-KtW" firstAttribute="leading" secondItem="cJe-0F-46q" secondAttribute="trailing" constant="10" id="2Dr-JB-ut0"/>
@@ -242,9 +244,12 @@
                                     <constraint firstItem="cJe-0F-46q" firstAttribute="leading" secondItem="0Oj-3r-rfY" secondAttribute="trailing" constant="10" id="DDX-wf-99c"/>
                                     <constraint firstAttribute="height" constant="60" id="ddX-h1-Fnz"/>
                                     <constraint firstItem="0Oj-3r-rfY" firstAttribute="centerY" secondItem="Dcy-vy-ZCm" secondAttribute="centerY" id="oHQ-sN-gBv"/>
-                                    <constraint firstItem="0Oj-3r-rfY" firstAttribute="leading" secondItem="Dcy-vy-ZCm" secondAttribute="leading" constant="10" id="tZG-g1-d9J"/>
+                                    <constraint firstItem="0Oj-3r-rfY" firstAttribute="leading" secondItem="Dcy-vy-ZCm" secondAttribute="leading" constant="16" id="tZG-g1-d9J"/>
                                     <constraint firstAttribute="trailing" secondItem="iGM-3g-KtW" secondAttribute="trailing" constant="16" id="u6v-cf-Tdx"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="e2L-Vq-uFk" appends="YES" id="2Ji-aF-49l"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -264,12 +269,17 @@
                     <connections>
                         <outlet property="addButton" destination="iGM-3g-KtW" id="9OP-L5-fFB"/>
                         <outlet property="collectionView" destination="4SV-qp-NAk" id="38h-5I-9sG"/>
-                        <outlet property="inputTextField" destination="0Oj-3r-rfY" id="x39-Ae-sHe"/>
-                        <outlet property="inputViewButton" destination="N3h-x2-UtN" id="lGL-ZY-28Q"/>
+                        <outlet property="inputTextField" destination="0Oj-3r-rfY" id="ty8-AY-jNi"/>
+                        <outlet property="inputViewBottom" destination="N3h-x2-UtN" id="5mk-Kh-ghv"/>
                         <outlet property="isTodayButton" destination="cJe-0F-46q" id="r42-ll-dLC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="e2L-Vq-uFk">
+                    <connections>
+                        <action selector="tapBG:" destination="BYZ-38-t0r" id="HKu-wu-B0l"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-530.43478260869574" y="803.57142857142856"/>
         </scene>
