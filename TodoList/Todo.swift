@@ -61,6 +61,7 @@ class TodoManager {
     
     func saveTodo() {
         Storage.store(todos, to: .documents, as: "todos.json")
+        TodoManager.lastId = todos.count
     }
     
     func retrieveTodo() {
