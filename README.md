@@ -2,7 +2,7 @@
 IOS Application by codable
 
 
-**학습한 내용**
+**what you learned**
 
 + Data R/W
   - Codable: Provides convenience when reading and writing JSON data format. Supported in Swift 4 or later.
@@ -93,12 +93,12 @@ extension TodoListViewController {
   - UI is updated by DispatchQueue.main.async
 
 
-**결과물**
+**Result**
 
 > 감코블로그: https://yeongwoo-cho.tistory.com/category/IOS%20application/To%20Do%20List%20%28project%29
 
 
-**저작권**
+**License**
 > fastcampus: https://www.fastcampus.co.kr/
 
 > 이준원: https://github.com/cafielo
