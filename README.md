@@ -11,6 +11,8 @@ IOS Application by codable
 
 + FileManager
   - .documentDirectory: According to the Apple document, it is recommended that all content created by the user be saved in the Documents directory. Since we want to store the file, it will have to be stored in documentDirectory. If so, knowing where the documentDirectory is would be your first priority. Therefore, the code below is the code to get the Document Directory URL.
+  - The urls method is a method that returns an array of URLs for the specified common directory in the requested domain. The first parameter for is the search path directory. The second parameter in indicates Domain.
+  - FileManager.default: It make Singleton instance of FileManager
 ~~~
 public class Storage {
     
@@ -36,8 +38,6 @@ public class Storage {
     }
 }
 ~~~
-  - The urls method is a method that returns an array of URLs for the specified common directory in the requested domain. The first parameter for is the search path directory. The second parameter in indicates Domain.
-  - FileManager.default: It make Singleton instance of FileManager
 
 + Keyboard - Notification
   - I am observing a Notification with a specific name in NotificationCenter. Here we are observing the visibility and hiding of the keyboard. When a change occurs, the @objc method called 'adjustInputView' is called.
