@@ -18,9 +18,6 @@ public class Storage {
     
     private init() { }
     
-    // TODO: directory 설명
-    // TODO: FileManager 설명
-    
     enum Directory {
         case documents
         case caches
